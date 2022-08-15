@@ -1,0 +1,84 @@
+
+/* SELECTOR UNIVERSAL */
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+body{
+    margin: 0 auto;
+    max-width: 50em;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: #555;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+/* SELECTOR POR ENCABEZADO */
+h1{
+    color:blueviolet;
+}
+
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+  }
+
+  h1,
+  h2,
+  strong {
+    color: #333;
+  }
+
+  a {
+    color: #1c60e8;
+  }
+
+  
+
+/*
+--------------- HOJAS DE ESTILOS EN CASCADA ---------------
+El estilo mas generico tiene menos prioridad que el mas especifico
+/*
+
+/* SELECTOR DE CLASE */
+.azul
+{
+    color: blue;
+}
+
+/*class "azul";*/
+
+/* LA CLASE SOLO APLICA PARA LISTAS ORDENADAS (ol) */
+ol.morado{
+    color: purple;
+}
+
+/* SELECTOR DE PSEUDO CLASES */
+p:hover
+{
+    color: red;
+}
+
+.verde:hover
+{
+    color: darkgreen;
+}
+
+/* SELECTORES DE ID */
+#cerveza_indio{
+    color:blue;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
