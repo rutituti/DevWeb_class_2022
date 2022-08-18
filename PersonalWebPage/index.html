@@ -8,7 +8,7 @@
 
     </head>
         
-
+    
     <audio src="Audio/Water_cat.mp3" controls autoplay loop></audio>
 
     <nav>
@@ -265,27 +265,55 @@
 
                 <h3>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </h3>
                 <p>
-
+                    Expertos en CSS estan en contra del uso de !important y que no deberia tener lugar en el archivo CSS
                 </p>
 
                 
                 <h3>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado? </h3>
                 <p>
-
+                    Ya que esta puede ser un distractor para el lector, ya sea que el color sea muy llamativo, impida
+                    leer correctamente el texto y que esteticamente se vea inadecuado.
                 </p>
 
 
                 
                 <h3>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt? </h3>
                 <p>
+                    <ul>
+                        <li>
+                            % - Los pocertajes especifican el porcentaje de la propiedad del correspodiente elemento del padre. Ejemplo:
+                                <pre class="language-css">
+  .parent {
+      width: 400px;
+    }
+    
+    .child {
+      width: 50%; /* = 200px */
+    }
+                                </pre>
+                        </li>
 
+                        <li>
+                            px - Unidad de medida mas utilizada. Este no se correlacionacon al pixel del dispositivo ya que este puede variar
+                            entre modelos. Pero se tiene una convencion para que esta unidad se consistencia entre multiples dispositivos
+                        </li>
+
+                        <li>
+                            pt - punto (1 pulgada = 72 puntos). Medida inutil en el mundo digital ya que proviene de medidas fisicas, pero util 
+                            al momento de imprimir stylesheets.            
+                        </li>
+                    </ul>
+
+                    Escoger unas medidas u otras dependerá de la necesidad del programador, ya sea para heredar del padre atributos, medidas digitales
+                    o medidas para impresiones.
                 </p>
 
 
                 
                 <h3>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio? </h3>
                 <p>
-
+                    Ya que al visualizar una pagina este tiene que leer y descargar todo el archivo, contando espacios y comentarios. Entre mas espacios
+                    y comentarios o texto no relevante del CSS mas tiempo tardará en descargar el archivo y mas lenta será la página.
                 </p>
 
 
