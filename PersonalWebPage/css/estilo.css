@@ -54,7 +54,7 @@ ol.morado{
 /* SELECTOR DE PSEUDO CLASES */
 p:hover
 {
-    color: red;
+    color: darkblue;
 }
 
 .verde:hover
