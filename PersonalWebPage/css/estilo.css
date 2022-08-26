@@ -27,6 +27,12 @@ h2 {
     color: #333;
   }
 
+  h1,
+  h2,
+  strong {
+  color: #333;
+  }
+
   a {
     color: #1c60e8;
   }
@@ -82,4 +88,19 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+code,
+pre {
+  background: #eee;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+pre {
+  padding: 1em;
+}
+
 

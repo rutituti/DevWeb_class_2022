@@ -25,6 +25,7 @@
             <li><a href="#ART2">ARTICULO 2</a></li>
             <li><a href="#ART3">LAB1 - PREGUNTAS A RESPONDER</a></li>
             <li><a href="#ART4">LAB3 - PREGUNTAS A RESPONDER</a></li>
+            <li><a href="#ART5">LAB5 - PREGUNTAS A RESPONDER</a></li>
         </ul>
     </nav>
     <body>
@@ -336,13 +337,24 @@
 
                 <h3>¿Qué diferencias y semejanzas hay entre Java y JavaScript? </h3>
                 <p>
-                    
+                    <img src="https://scand.com/wp-content/uploads/2019/09/table.jpg" width="600" alt="JavaVSJavaScript">   
                 </p>
 
                 
                 <h3>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) </h3>
                 <p>
-                   
+                    <table>
+                        <thead>
+                            <tr> <th>Fecha/Hora</th> <th>Metodo</th> <th>Rango</th> <th>Ejemplo</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr> <td>Año</td> <td><code>getFullYear()</code></td> <td>YYYY</td><td>1970</td></tr>
+                            <tr><td>Mes</td> <td><code>getMonth()</code></td> <td>0-11</td><td>0 = Enero</td></tr>
+                            <tr> <td>Dia(mes)</td> <td><code>getDate()</code></td> <td>1-31</td><td>1 = Primero de Enero</td></tr>
+                            <tr><td>Dia(semana)</td><td><code>getDay()</code></td> <td>0-6</td><td>0 = Domingo</td></tr>
+                            <tr> <td>Hora</td> <td><code>getHours()</code></td> <td>0-23</td><td>0 = medianoche</td></tr>
+                        </tbody>
+                    </table>
                 </p>
 
 
@@ -350,23 +362,38 @@
                 <h3> ¿Qué métodos tienen los arreglos? (Menciona al menos 5*) </h3>
                 <p>
                  
+                    <table>
+                        <thead>
+                            <tr> <th>Descripcion</th> <th>Metodo</th> <th>Ejemplo</th> <th>Salida</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr> <td>Convierte arreglo a cadena separada por comas</td> <td><code>toString()</code></td> <td>fruits.toString();</td><td>Banana,Orange,Apple,Mango</td></tr>
+                            <tr><td>Junta elementos de un arreglo con separadores especificados</td> <td><code>join()</code></td> <td>fruits.join(" * ");</td><td>Banana * Orange * Apple * Mango</td></tr>
+                            <tr> <td>Saca elemento del arreglo</td> <td><code>pop()</code></td> <td>fruits.pop();</td><td>Regresa el valor sacado</td></tr>
+                            <tr><td>Agrega un nuevo elemento al arreglo (al final)</td><td><code>push()</code></td> <td>fruits.push("Kiwi");</td><td>Regresa el nuevo tamaño del arreglo</td></tr>
+                            <tr> <td>remueve elemento del arreglo y desplaza los otros al indice menor</td> <td><code>shift();</code></td> <td>fruits.shift();</td><td>Retorna elemento desplazado</td></tr>
+                        </tbody>
+                    </table>
+
                 </p>
 
 
                 
                 <h3>¿Cómo se declara una variable con alcance local dentro de una función? </h3>
                 <p>
+                    <code>let nombre_variable</code>
                     
                 </p>
 
                 <h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones? </h3>
                 <p>
-                    
+                    Estas variables tienen un scope de todo el programa principal, es decir que estas al finalizar
+                    su funcion en el scope creado esta variable no desaparece y sigue en uso.
                 </p>
 
                 <h3>¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?</h3>
                 <p>
-
+                    Metodo <code>search()</code> se podria utilizar en un buscador para entrar el patron para lo que se quiere encontrar.
                 </p>
 
             </article>
