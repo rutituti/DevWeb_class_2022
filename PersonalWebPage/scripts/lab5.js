@@ -23,7 +23,7 @@ function get_numcubes()
  
 }
 
-get_numcubes();
+//get_numcubes();
 
 
 /*
@@ -57,21 +57,85 @@ function guess_number()
 
 }
 
-guess_number();
+//guess_number();
 
 /*
-3:TODO
+3:TODO Agregarlo a la pagina
 Función: contador. 
 Parámetros: Un arreglo de números. 
 Regresa: La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.
 */
 
+function count_numbers()
+{
+    let cont_zeros = 0, cont_num_p = 0, cont_num_n = 0;
+    const array = [];
+    for (let i = 0; i < 10; i++) {
+        let rand_num = Math.floor(Math.random() * 201) -100; // Numero aleatorio del -100 al 100
+        array.push(rand_num);
+    }
+    console.log(array);
+    for (let i = 0; i < array.length; i++) {
+       
+        if(array[i] < 0)
+        {
+            cont_num_n++;//Contar numeros Negativos
+
+        }else if(array[i] > 0)
+        {
+            cont_num_p++; //Contar numeros positivos
+        }else
+        {
+            cont_zeros++;//Contar zeros
+        }        
+    }
+
+    console.log("Numeros positivos = "+cont_num_p+"\nNumeros negativos = "+cont_num_n+"\nCeros = "+cont_zeros);
+}
+
+//count_numbers();
+
 /*
-4:TODO
+4:TODO Mostrar resultado en la pagina
 Función: promedios. 
 Parámetros: Un arreglo de arreglos de números. 
 Regresa: Un arreglo con los promedios de cada uno de los renglones de la matriz.
 */
+
+function promedio_fila()
+{
+    const filas = 4;
+    const columnas = 3;
+    let matrix = Array.from(Array(filas),()=>new Array(columnas));
+    
+    const array = [];
+    //Llenar matriz
+    for (let i = 0; i < filas; i++) {
+        for (let j = 0; j < columnas; j++) {
+            matrix[i][j] = Math.floor(Math.random()*11);            
+        }
+        
+    }
+    //Sacar promedios
+    const promedios = [];
+    
+    for (let i = 0; i < filas; i++) {
+        let suma  = 0;
+        for (let j = 0; j < columnas; j++) {
+            suma = suma +  matrix[i][j];  
+                
+        }
+        let promedio = suma/columnas;  
+        promedios.push(promedio.toFixed(2));
+        
+    }
+
+    console.log(matrix);
+    console.log(promedios);
+}
+
+//promedio_fila();
+
 
 /*
 5:TODO
@@ -79,6 +143,15 @@ Función: inverso.
 Parámetros: Un número. 
 Regresa: El número con sus dígitos en orden inverso.
 */
+
+function num_inverted(number)
+{
+    
+    const numero_inv = number.toString().split("").reverse().join("");
+    console.log("Original: "+number+"\nInvertido: "+numero_inv);
+}
+
+num_inverted(12345);
 
 /*
 6:TODO
