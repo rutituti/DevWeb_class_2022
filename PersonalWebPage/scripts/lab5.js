@@ -191,3 +191,27 @@ El problema debe estar descrito en un documento HTML, y la solución implementad
 utilizando al menos la creación de un objeto, el objeto además de su constructor deben tener al menos 2 métodos. 
 Muestra los resultados en el documento HTML.
 */
+
+function solution()
+{
+    const array = [];
+    for (let i = 0; i < 10; i++) {
+        let rand_num = Math.floor(Math.random() * 21) -11; // Numero aleatorio del -10 al 10
+        array.push(rand_num);
+    }
+    console.log(array);
+
+    let product = array[0] * array[1];
+    
+    for (let i = 1; i<array.length - 1;i++) {
+        product = Math.max(product, array[i] * array[i+1]);
+    }
+    
+
+    //CODIGO PARA VERLO EN EL HTML
+    let concatenar =  "Arreglo: " + array;
+    concatenar +=  '<p>'+"Mayor Producto de valores adyacentes = "+product;
+    document.getElementById("id_problema").innerHTML = concatenar;
+}
+
+solution();
