@@ -12,7 +12,7 @@ function get_numcubes()
     console.log("Numero Ingresado = " + num);
     const array_cubes = [0];
     let tabla = '<table>';
-    tabla += '<tr> <td>NUMERO</td> <td>CUBO</td>  </tr>';
+    tabla += '<tr> <th>NUMERO</td> <td>CUBO</th>  </tr>';
     for (let i = 1; i <= num; i++) {
         array_cubes.push(i*i*i);
         tabla += '<tr> <td>'+i+'</td> <td>'+array_cubes[i]+'</td></tr>';
