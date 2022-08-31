@@ -23,18 +23,51 @@
                 <h2>EJERCICIOS CON JAVASCRIPT</h2>
 
                 <ol>
-                    <li><h3> Verificador de passwords</h3></li>
-                        <p>
-                           <span id="id_passverif"> Verificador passwords</span>
-                        </p>
                     
+                    <li><h3> Verificador de passwords y Texto dinamico</h3></li>
+                        <p>
+                           <span id="id_passverif"> </span>
+                           <a href="pass_validator.html">Verificador passwords y texto dinamico</a>
+                           <a href="https://www.codingnepalweb.com/password-and-confirm-password-validation-javascript/"> <p>Codigo fuente</p></a>
+                        </p>
+        <!-- ------------------------------------TIENDITA------------------------------------------------->
                     <li><h3> Tiendita </h3></li>
                         <p>
                             <span id="id_tiendita">tiendita</span>  
                         </p>
-                    <li><h3> Texto dinamico</h3></li>
+                        <table>
+                            <thead>
+                                <tr> <th>Cantidad</th> <th>Articulo</th> <th>Precio Unitario</th> <th>Importe</th>  </tr>
+                                <!--Articulo 1-->
+                                <tr> <td> <input id="id_num_lapiz" size="100" value="0" type="number" max="50" min="1"> </td>  
+                                <td>Lápiz Stabilo</td> <td>$<span id="id_precio_lapiz">16</span></td> <td> <span id="id_imp1"></span></td>
+                                </tr>
+                                <!--Articulo 2-->
+                                <tr> <td> <input id="id_num_goma"  size="100" value="0" type="number" max="50" min="1"> </td>  
+                                <td>Goma Factis</td> <td>$<span id="id_precio_goma">12</span></td> <td> <span id="id_imp2"></span></td>
+                                </tr>
+                                
+                                <!--Articulo 3-->
+                                <tr> <td> <input id="id_num_sacas"  size="100" value="0" type="number" max="50" min="1"> </td>  
+                                    <td>Sacapuntas</td> <td>$<span id="id_precio_sacas">10</span></td> <td> <span id="id_imp3"></span></td>
+                                </tr>
+
+                                <tfoot>
+                                    <tr><td></td><td></td>  <td>TOTAL</td> <td><span id="id_total"></span></td></tr>
+                                    <tr><td></td><td><button id="id_buton_calc">Calcular</button></td>  <td>TOTAL + IVA</td> <td><span id="id_total_IVA"></span></td></tr>
+                                </tfoot>
+                            </thead>
+
+                            <tfoot>
+
+                            </tfoot>
+
+                        </table>
+        <!-- ----------------------CAMBIAR ESTILOS---------------------------------->
+                        
+                    <li><h3 id="id_estilod"> Estilo dinamico </h3></li>
                         <p>
-                            <span id="id_textod">texto dinamico</span>  
+                            <span id="id_textod">estilo dinamico</span>  
                         </p>
                 </ol>
 
@@ -42,8 +75,8 @@
 
         </section>
         
-
+        <script src="../scripts/lab6.js"> </script>
     </body>
 
-    <script src="scripts/lab5.js"> </script>
+   
 </html>

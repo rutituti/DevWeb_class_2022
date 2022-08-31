@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Confirm Password Check | CodingNepal</title>
+      <link rel="stylesheet" href="../css/style_lab6_1.css">
+   </head>
+   <body>
+    <h2>INDICE</h2>
+    <ul>
+        <li><a href="lab6.html">LAB 6</a></li>
+      
+    </ul>
+
+      <div class="container">
+
+         <header>Verificador de contraseñas <br>HTML, CSS & JavaScript</header>
+         <form action="#">
+            <div class="error-text"></div>
+            <div class="field">
+               <input onkeyup="active()" id="pswrd_1" type="password" placeholder="Enter Password">
+            </div>
+            <div class="field">
+               <input onkeyup="active_2()" id="pswrd_2" disabled type="password" placeholder="Confirm Password">
+               <div class="show">
+                  SHOW
+               </div>
+            </div>
+            <button disabled>Check</button>
+            
+     <!--Clase .help modificacion propia para crear boton de ayuda-->
+
+            <button class="button2 help" >?</button>
+            <span id="id_ayuda"></span>
+            
+         </form>
+      </div>
+      <script src="../scripts/pass_valid.js"> </script>
+   </body>
+</html>
