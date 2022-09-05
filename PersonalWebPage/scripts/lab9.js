@@ -20,13 +20,14 @@ for(let item in arreglo)
 }
 
 //Orden valores con programacion asincrona
+/*
 for(let item of arreglo)
 {
     setTimeout(()=>{
         console.log(item);
     },item);
 }
-
+*/
 //Crear mi primer servidor
 
 
@@ -74,7 +75,7 @@ Crea una pequeña aplicación web que al enviar una petición al servidor,
 devuelva una de las páginas que creaste anteriormente en tus laboratorios.
 */
 const http = require('http');
-const html = filesystem.readFileSync("../index.html");
+const html = filesystem.readFileSync("../html/index.html"); 
 const server = http.createServer( (request,response) => {
     console.log(request.url);
     response.setHeader('Content-Type','text/html');
