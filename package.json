@@ -1,0 +1,25 @@
+{
+  "name": "devweb_class_2022",
+  "version": "1.0.0",
+  "description": "Aprendiendo npm y node para Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rutituti/DevWeb_class_2022.git"
+  },
+  "keywords": [
+    "daw",
+    "express",
+    "node",
+    "npm"
+  ],
+  "author": "Ruth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rutituti/DevWeb_class_2022/issues"
+  },
+  "homepage": "https://github.com/rutituti/DevWeb_class_2022#readme"
+}
