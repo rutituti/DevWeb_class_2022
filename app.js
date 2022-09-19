@@ -21,20 +21,23 @@ app.use((request, response, next) => {
 });
 
 // El orden de las rutas debe ser siempre de lo mas especificio a lo general
-app.use('/robots/new', (request, response, next) => {
-    response.send('Respuesta de la ruta "/robots/new"'); 
+app.use('/utiles/new', (request, response, next) => {
+
+    response.send('Respuesta de la ruta "/utiles/new"'); 
 });
 
-app.use('/robots', (request, response, next) => {
-    response.send('Respuesta de la ruta "/robots"'); 
+app.use('/utiles', (request, response, next) => {
+    response.send('Respuesta de la ruta "/utiles"'); 
 });
 
 
 
 app.use((request, response, next) => {
-    console.log('Otro middleware!');
-    response.send('¡Hola mundo!'); //Manda la respuesta
+    console.log('Ruta no existente');
+    response.status(404).send('<h1> ERROR 404! </h1>') //Manda la respuesta
     //Nunca poner un next() despues de una respuesta, puede causar errores 
 });
+
+
 
 app.listen(3000);
