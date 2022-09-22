@@ -11,6 +11,7 @@ router.get('/ruta', (request, response, next) => {
 */
 router.get('/new', (request, response, next) => {
     let html = '<!DOCTYPE html>';
+    html += '<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>'
     html += "<h1>Registrar nuevo articulo escolar</h1>";
     html += '<form action="/utiles/new" method="POST">';
     html += '<label for="nombre">Articulo: </label>';

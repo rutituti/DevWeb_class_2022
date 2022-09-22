@@ -1,8 +1,14 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const path = require('path');
 
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false})); //se pone el body parser hasta arriba para que se use en todas rutas
+
 
 
 //Middleware
@@ -43,8 +49,9 @@ app.use('/home', (request, response, next) => {
 
 
 app.use((request, response, next) => {
-    console.log('Ruta no existente');
-    response.status(404).send('<h1> ERROR 404! </h1>') //Manda la respuesta
+    
+    response.status(404);
+    response.sendFile(path.join(__dirname,'views', 'error.html'));
     //Nunca poner un next() despues de una respuesta, puede causar errores 
 });
 
