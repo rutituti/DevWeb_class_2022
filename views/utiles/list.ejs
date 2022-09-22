@@ -1,0 +1,13 @@
+
+<%- include('../includes/head.ejs') %>
+
+<h1>Utiles escolares</h1>
+<a href="/comprar">COMPRAR</a>
+<p><a href="/utiles/new">Registra nuevo articulo</a></p>
+<ul>
+    <% for (let r of utiles) {%>
+        <li><%= r %></li>
+    <%}%>
+</ul>
+
+<%- include('../includes/foot.ejs') %>
