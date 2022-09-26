@@ -1,0 +1,16 @@
+
+<h1>COMPRAR</h1>
+<a href="/utiles">Lista de utiles</a>
+<table>
+<thead>
+<tr> <th>Cantidad</th> <th>Articulo</th> <th>Precio Unitario</th> <th>Importe</th>  </tr>
+</thead>
+<% for (let u of utiles) { %>
+    <tr><td> <input size="100" value="0" type="number" max="50" min="1"> </td><td><%= u.nombre %></td><td>$<span><%= u.precio %></span></td> <td> <span id="id_imp1"></span></td></tr>
+<% } %>
+
+<tfoot>
+<tr><td></td><td></td>  <td>TOTAL</td> <td><span id="id_total"></span></td></tr>
+<tr><td></td><td><button id="id_buton_calc">Calcular</button></td>  <td>TOTAL + IVA</td> <td><span id="id_total_IVA"></span></td></tr>
+<tfoot>
+</table>

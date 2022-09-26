@@ -1,13 +1,31 @@
 
 <%- include('../includes/head.ejs') %>
 
-<h1>Utiles escolares</h1>
-<a href="/comprar">COMPRAR</a>
-<p><a href="/utiles/new">Registra nuevo articulo</a></p>
-<ul>
-    <% for (let r of utiles) {%>
-        <li><%= r %></li>
-    <%}%>
-</ul>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Tiendita</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/comprar">COMPRAR</a></li>
+            <li><a href="/utiles/new">Registrar nuevo articulo</a></li>
+          </ul>
+        </div>
+    </nav>
+
+<h1>Ariculos Escolares</h1>
+
+
+
+<% if (utiles.length > 0) { %>
+  <div class="row">
+      <% for (let r of utiles) { %>
+          <div class="col s12 m4 l3">
+              <%- include('card.ejs', {utiles: r}) %>
+          </div>
+      <% } %>
+  </div>
+<% } else { %>
+  <h3>No hay articulos registrados.</h3>
+<% } %>
+
 
 <%- include('../includes/foot.ejs') %>
