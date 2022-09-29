@@ -7,6 +7,7 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/comprar">COMPRAR</a></li>
             <li><a href="/utiles/new">Registrar nuevo articulo</a></li>
+            <li><a href="/user/logout">Cerrar sesion</a></li>
           </ul>
         </div>
     </nav>
@@ -27,5 +28,8 @@
   <h3>No hay articulos registrados.</h3>
 <% } %>
 
+<% if (ultimo_articulo != '') { %>
+  <p>El último articulo registrado fue: <%= ultimo_articulo %></p>
+<% } %>
 
 <%- include('../includes/foot.ejs') %>
