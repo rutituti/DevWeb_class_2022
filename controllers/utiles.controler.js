@@ -19,16 +19,24 @@ exports.get_new = (request, response, next) => {
 };
 
 exports.get_edit = (request, response, next) => {
-    
-        Utiles.fetchOne(request.params.id)
-            .then( ([rows, fieldData]) => {
-                response.render(path.join('utiles','new.ejs'), {
-                    utiles: rows[0] ? rows[0] : '',
-                    info: '',
+        TipoUtiles.fetchAll()
+        .then(([tipo_utiles, fieldData]) => {
+            Utiles.fetchOne(request.params.id)
+                .then( ([rows, fieldData]) => {
+                    response.render(path.join('utiles','new.ejs'), {
+                        utiles: rows[0] ? rows[0] : '',
+                        tipos:tipo_utiles,
+                        info: '',
+                    });
+                }).catch( (error) => {
+                    console.log(error);
                 });
-            }).catch( (error) => {
-                console.log(error);
-            });
+
+        })
+        .catch( (error) => {
+            console.log(error);
+        });
+       
     
     };
 

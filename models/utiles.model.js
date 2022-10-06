@@ -1,6 +1,10 @@
 
 const db = require('../util/database');
 
+//En un modelo
+const bcrypt = require('bcryptjs');
+
+
 module.exports = class Utiles 
 {
 
@@ -33,10 +37,10 @@ module.exports = class Utiles
         return db.execute('SELECT * FROM utiles WHERE id = ?', [id]);
     }
 
-    static edit(id, nombre, descripcion) {
+    static edit(id,nombre, precio,descripcion,imagen) {
         return db.execute(
             'UPDATE utiles SET nombre = ?, precio = ?, descripcion = ?, imagen = ? WHERE id = ?', 
-            [nombre, precio,descripcion, id]);
+            [nombre, precio,descripcion,imagen, id]);
             
     }
 
