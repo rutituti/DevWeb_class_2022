@@ -35,7 +35,7 @@ module.exports = class Utiles
 
     static edit(id, nombre, descripcion) {
         return db.execute(
-            'UPDATE utiles SET nombre = ?,precio = ?, descripcion = ?, imagen = ? WHERE id = ?', 
+            'UPDATE utiles SET nombre = ?, precio = ?, descripcion = ?, imagen = ? WHERE id = ?', 
             [nombre, precio,descripcion, id]);
             
     }

@@ -2,12 +2,19 @@
 const { info } = require('console');
 const path = require('path');
 const Utiles = require('../models/utiles.model');
+const TipoUtiles = require('../models/tipo_utiles.model');
 
 exports.get_new = (request, response, next) => {
-    response.render(path.join('utiles','new.ejs'),{
-        info: '',
-        utiles:'',
+    TipoUtiles.fetchAll().then(([rows, fieldData])=> {
+        response.render(path.join('utiles','new.ejs'),{
+            info: '',
+            utiles:'',
+            tipos: rows,
+        });
+    }).catch( (error) => {
+        console.log(error);
     });
+   
     
 };
 
@@ -26,8 +33,9 @@ exports.get_edit = (request, response, next) => {
     };
 
 exports.post_edit = (request, response, next) => {
-            
-    Utiles.edit(request.body.id, request.body.nombre,request.body.precio, request.body.descripcion,request.body.imagen)
+    //console.log("HOLAAAAAAAAAAAAAAAAAAAAA");
+    //console.log(request.body);
+    Utiles.edit(request.body.id, request.body.nombre ,request.body.precio, request.body.descripcion, request.body.imagen)
     .then( () => {
         request.session.info = "La información del articulo " + request.body.nombre + " fue actualizada exitosamente";
         response.redirect('/utiles');
@@ -38,7 +46,8 @@ exports.post_edit = (request, response, next) => {
 };
 
 exports.post_new = (request, response, next) => {
-    const articulo = new Utiles(request.body.nombre,request.body.precio, request.body.descripcion, request.body.imagen);
+    console.log(request.body);
+    const articulo = new Utiles(request.body.nombre,request.body.precio, request.body.descripcion, request.body.imagen, request.body.tipo_id);
     articulo.save().then(() => {
         request.session.ultimo_articulo = articulo.nombre;
         request.session.info = "El arcitulo "+articulo.nombre+" fue creado existosamente";

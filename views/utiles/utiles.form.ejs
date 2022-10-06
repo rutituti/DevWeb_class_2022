@@ -6,7 +6,6 @@
     <h1>Editar articulo</h1>
 <% } %>
 
-<form action="/utiles/new" method="POST">
 
     <% if (utiles === '') { %>
         <form action="/utiles/new" method="POST">
@@ -30,6 +29,18 @@
     <label for="imagen">Enlace Imagen: </label>
     <input type="text" id="imagen" name="imagen" value="<%= utiles.imagen ? utiles.imagen : '' %>">
     <br><br>
+
+    <div class="input-field col s12">
+        <select name="id_tipo">
+          <option value="" disabled selected>Selecciona una opcion</option>
+          <% for (let i of tipos) { %>
+            <option value="<%= i.id %>"> <%= i.descripcion %> </option>
+          <% } %>
+          
+          
+        </select>
+        <label>Materialize Select</label>
+    </div>
      
     <input type="submit" id="enviar" name="enviar" value="Registrar">
  
