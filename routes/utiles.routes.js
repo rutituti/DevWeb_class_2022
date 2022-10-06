@@ -14,6 +14,12 @@ router.get('/new', utilesController.get_new);
 
 router.post('/new', utilesController.post_new);
 
+router.get('/edit/:id', utilesController.get_edit);
+
+router.post('/edit', utilesController.post_edit);
+
+router.get('/:id', utilesController.get_one);
+
 router.get('/', utilesController.get_root );
 
 

@@ -1,7 +1,8 @@
 
 const db = require('../util/database');
 
-module.exports = class Utiles {
+module.exports = class Utiles 
+{
 
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
     constructor(mi_nombre,miprecio,mi_descripcion, mi_imagen, mi_tipo_id) {
@@ -13,7 +14,8 @@ module.exports = class Utiles {
     }
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
-    save() {
+    save() 
+    {
 
         return db.execute('INSERT INTO utiles (nombre, descripcion, imagen, precio, id_tipo) VALUES (?, ?, ?, ?, ?)',
         [this.nombre, this.descripcion, this.imagen, this.precio, this.tipo_id]
@@ -23,8 +25,19 @@ module.exports = class Utiles {
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
         return db.execute('SELECT * FROM utiles'); //codigo asincrono
-       
     
+    }
+
+    static fetchOne(id)
+    {
+        return db.execute('SELECT * FROM utiles WHERE id = ?', [id]);
+    }
+
+    static edit(id, nombre, descripcion) {
+        return db.execute(
+            'UPDATE utiles SET nombre = ?,precio = ?, descripcion = ?, imagen = ? WHERE id = ?', 
+            [nombre, precio,descripcion, id]);
+            
     }
 
 }

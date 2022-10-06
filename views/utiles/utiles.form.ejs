@@ -1,21 +1,39 @@
-<h1>Registrar nuevo articulo escolar</h1>
+
+
+<% if (utiles === '') { %>
+    <h1>Registrar nuevo articulo escolar</h1>
+<% } else { %>
+    <h1>Editar articulo</h1>
+<% } %>
 
 <form action="/utiles/new" method="POST">
+
+    <% if (utiles === '') { %>
+        <form action="/utiles/new" method="POST">
+    <% } else { %>
+        <form action="/utiles/edit" method="POST">
+        <input type="hidden" id="id" name="id" value="<%= utiles.id %>">
+    <% } %>
+
     <label for="nombre">Articulo: </label>
-    <input type="text" id="nombre" name="nombre">
+    <input type="text" id="nombre" name="nombre" value="<%= utiles.nombre ? utiles.nombre : '' %>">
     <br><br>
 
     <label for="precio">Precio: </label>
-    <input type="text" id="precio" name="precio">
+    <input type="text" id="precio" name="precio" value="<%= utiles.precio ? utiles.precio : '' %>">
     <br><br>
 
     <label for="descripcion">Descripcion: </label>
-    <input type="text" id="descripcion" name="descripcion">
+    <input type="text" id="descripcion" name="descripcion" value="<%= utiles.descripcion ? utiles.descripcion : '' %>">
     <br><br>
 
     <label for="imagen">Enlace Imagen: </label>
-    <input type="text" id="imagen" name="imagen">
+    <input type="text" id="imagen" name="imagen" value="<%= utiles.imagen ? utiles.imagen : '' %>">
     <br><br>
-
+     
     <input type="submit" id="enviar" name="enviar" value="Registrar">
+ 
+      
+
+    
 </form>
