@@ -20,6 +20,8 @@ app.use(session({
 
 }));
 
+
+
 //Middleware
 //Registrar Middlewares con funciones anonimas
 
@@ -28,9 +30,10 @@ app.use(session({
  * @param response respuesta
  * @param next el siguiente middleware
  */
+
 app.use((request, response, next) => {
     const clicks = Number(request.cookies.numero_clicks ? request.cookies.numero_clicks : 0) + 1;
-    console.log(request.cookies);
+    //console.log(request.cookies);
     response.setHeader('Set-Cookie', 'num_clicks=' + clicks);
     console.log('Middleware!');
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
@@ -60,6 +63,7 @@ app.use('/home', (request, response, next) => {
    
     response.send('Hola mundo'); 
 });
+
 
 
 

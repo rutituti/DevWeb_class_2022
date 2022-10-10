@@ -25,10 +25,12 @@ module.exports = class Usuario
             return db.execute('INSERT INTO usuarios (username, password, nombre) VALUES (?, ?, ?)',
             [this.username, pass_cifrado, this.nombre]
             );
-        }).catch(error => {console.log(error)})
+        }).catch(error => {console.log(error)});
                         
-       
     }
 
+    static getUser(username) {
+        return db.execute('SELECT * FROM usuarios WHERE username = ?', [username]);
+    }
 
 }
