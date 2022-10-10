@@ -24,6 +24,7 @@ exports.get_login = (request, response, next) => {
         request.session.info = '';
         response.render(path.join('usuarios','login.ejs'), {
             info: info,
+            //csrfToken: request.csrfToken(),
         });
 };
     
