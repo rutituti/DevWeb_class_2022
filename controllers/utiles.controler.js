@@ -69,6 +69,7 @@ exports.post_new = (request, response, next) => {
 };
 
 exports.get_root = (request, response, next) => {
+
     
     Utiles.fetchAll().then(([rows,fieldData])=>{
         response.render(path.join('utiles','list.ejs'),{

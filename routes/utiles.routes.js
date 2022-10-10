@@ -2,6 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
+const isAuth = require('../util/is_auth');
+
 
 /* SINTAXIS
 router.get('/ruta', (request, response, next) => {
@@ -20,7 +22,7 @@ router.post('/edit', utilesController.post_edit);
 
 router.get('/:id', utilesController.get_one);
 
-router.get('/', utilesController.get_root );
+router.get('/', isAuth, utilesController.get_root );
 
 
 
