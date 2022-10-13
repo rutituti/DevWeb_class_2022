@@ -22,6 +22,8 @@ router.post('/edit', utilesController.post_edit);
 
 router.get('/:id', utilesController.get_one);
 
+router.get('/buscar/:valor_busqueda', utilesController.get_buscar);
+
 router.get('/', isAuth, utilesController.get_root );
 
 

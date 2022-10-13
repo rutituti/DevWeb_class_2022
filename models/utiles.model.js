@@ -44,4 +44,8 @@ module.exports = class Utiles
             
     }
 
+    static find(valor_busqueda) {
+        return db.execute('SELECT * FROM utiles WHERE nombre LIKE ? OR descripcion LIKE ? ', ['%'+valor_busqueda+'%', '%'+valor_busqueda+'%']);
+    }
+
 }

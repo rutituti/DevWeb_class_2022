@@ -10,7 +10,14 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(bodyParser.urlencoded({extended: false})); //se pone el body parser hasta arriba para que se use en todas rutas
+app.use(bodyParser.json()); // json -> java script object notation 
+
+/*
+//TODO
+{atributo}
+*/
 
 app.use(cokkieParser());
 app.use(session({
