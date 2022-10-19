@@ -9,7 +9,7 @@ module.exports = class Utiles
 {
 
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
-    constructor(mi_nombre,miprecio,mi_descripcion, mi_imagen, mi_tipo_id) {
+    constructor(id_tipo,id_lugar) {
         this.nombre = mi_nombre;
         this.descripcion = mi_descripcion ? mi_descripcion : 'Agregue una descripcion';
         this.imagen = mi_imagen ? mi_imagen : 'https://th.bing.com/th/id/OIP.SphiExhMc_acht6UyJ9XTQHaE8?pid=ImgDet&rs=1';

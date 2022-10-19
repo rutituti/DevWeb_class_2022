@@ -39,9 +39,12 @@
 </div>
 
 <script>
-  accion_asincrona = () => {
+  const accion_asincrona = () => {
         
           let valor_busqueda = document.getElementById('buscar').value;
+          /*
+          fetch('ruta',{objeto con peticion}).then(()=>{}).catch(()=>{});
+          */
 
           //función que manda la petición asíncrona
           fetch('/utiles/buscar/' + valor_busqueda, {
