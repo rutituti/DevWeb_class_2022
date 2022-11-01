@@ -1,9 +1,11 @@
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src="<%= utiles.imagen %>">
+
+    <img class="activator" src="/uploads/<%= utiles.imagen  %>">
     </div>
     <div class="card-content">
     <span class="card-title activator grey-text text-darken-4"><%= utiles.nombre %><i class="material-icons right">more_vert</i></span>
+    <span class="card-title activator grey-text text-darken-4">$<%= utiles.precio %><i class="material-icons right">more_vert</i></span>
     <p><a href="/utiles/edit/<%= utiles.id %>"><i class="tiny material-icons">edit</i> Editar</a></p>
     </div>
     <div class="card-reveal">

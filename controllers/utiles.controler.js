@@ -55,7 +55,8 @@ exports.post_edit = (request, response, next) => {
 
 exports.post_new = (request, response, next) => {
     console.log(request.body);
-    const articulo = new Utiles(request.body.nombre,request.body.precio, request.body.descripcion, request.body.imagen, request.body.tipo_id);
+    console.log(request.file);
+    const articulo = new Utiles(request.body.nombre,request.body.precio, request.body.descripcion, request.file.filename, request.body.tipo_id);
     articulo.save().then(() => {
         request.session.ultimo_articulo = articulo.nombre;
         request.session.info = "El arcitulo "+articulo.nombre+" fue creado existosamente";

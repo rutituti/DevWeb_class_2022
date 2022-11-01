@@ -8,7 +8,7 @@
 
 
     <% if (utiles === '') { %>
-        <form action="/utiles/new" method="POST">
+        <form action="/utiles/new" method="POST" enctype="multipart/form-data">
     <% } else { %>
         <form action="/utiles/edit" method="POST">
         <input type="hidden" id="id" name="id" value="<%= utiles.id %>">
@@ -25,11 +25,11 @@
     <label for="descripcion">Descripcion: </label>
     <input type="text" id="descripcion" name="descripcion" value="<%= utiles.descripcion ? utiles.descripcion : '' %>">
     <br><br>
-
+<!--
     <label for="imagen">Enlace Imagen: </label>
     <input type="text" id="imagen" name="imagen" value="<%= utiles.imagen ? utiles.imagen : '' %>">
     <br><br>
-
+-->
     <div class="input-field col s12">
         <select name="id_tipo">
           <option value="" disabled selected>Selecciona una opcion</option>
@@ -39,9 +39,14 @@
           
           
         </select>
-        <label>Materialize Select</label>
+        <label>Tipo de articulo</label>
     </div>
-     
+    <label for="imagen">Archivo Imagen: </label>
+    <% if (utiles === '') { %>
+        <input type="file" name="archivo">
+    <% } %>
+    <br>
+    <br>
     <input type="submit" id="enviar" name="enviar" value="Registrar">
  
       
