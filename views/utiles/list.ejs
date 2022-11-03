@@ -12,6 +12,35 @@
         </div>
     </nav>
 
+<h1>Un acertijo</h1>
+<p id="acertijo">
+  
+</p>
+<script>
+  const acertijo = () => {
+        
+          fetch('https://riddles-api.vercel.app/random', {
+              method: 'GET',
+              headers: {
+              'Content-Type': 'application/json',
+              }
+          }).then(result => {
+              return result.json(); //Regresa otra promesa
+          }).then(data => {
+              //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+              console.log(data.riddle);
+            let html = '';
+            html += data.riddle;
+       
+            document.getElementById('acertijo').innerHTML = html;
+          }).catch(err => {
+              console.log(err);
+          });
+
+      }
+      acertijo();
+</script>
+
 <h1>Articulos Escolares</h1>
 
 <div class="input-field ">
